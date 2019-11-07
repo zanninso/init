@@ -11,16 +11,9 @@ echo "             \____ \ / ___)/ ___| |  _ (_   _)                 ";
 echo "             _____) ( (___| |   | | |_| || |_                  ";
 echo "            (______/ \____|_|   |_|  __/  \__)                 ";
 echo "                                  |_|                          ";
-echo "                                           script by : aazeroua";															
-echo "Entre password";
-read -s rep
-if [ $rep != 1337 ]
-then
-	{
-		echo "error";
-	}
-else
-	{
+echo "                                           	                 ";															
+while true
+	do
 		echo " ----------------------------------------------------------------------------- "
 		echo " |                                                                             |"
 		echo " |        1 - update & upgrade & configure ssh                                 | "
@@ -66,8 +59,9 @@ else
 		if [ $re == 4 ]
 		then
 			{
+				echo " > please Entre your username : " && read username
 				echo " > please Entre your ip adresse : " && read ip
-				ssh user@$ip
+				ssh $username@$ip
 			}
 		fi
 		if [ $re == 5 ]
@@ -77,5 +71,8 @@ else
 				exit
 			}
 		fi
-	}
-fi
+		echo "click any key to retry"
+		read
+		clear
+
+	done
