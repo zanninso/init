@@ -1,1 +1,2 @@
-eval ifconfig en0 | grep broadcast;ping -c2 10.12.255.255
+ifconfig en0 inet
+ping -c2 10.12.255.255

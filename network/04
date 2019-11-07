@@ -1,1 +1,1 @@
-eval route -n get default | grep gateway | cut -d : -f 2
+netstat -nr |grep 'default.*en0'

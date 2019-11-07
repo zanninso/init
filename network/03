@@ -1,1 +1,1 @@
-eval ifconfig en0 ether | grep ether | cut -d ' ' -f2
+ifconfig en1 ether 
