@@ -1,0 +1,2 @@
+on graphic when prompt we just type the username and the password in the right field.
+and with ssh just type this commande `ssh [username]@[host]` then we type the password.
