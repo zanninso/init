@@ -1,1 +1,1 @@
-eval du -sh /var/* /var
+du -hd1 /var
