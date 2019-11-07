@@ -1,4 +1,4 @@
 echo "Which user would you remove?"
 read username
-kill -9 -u $username
+pkill -9 -u $username
 deluser  $username
