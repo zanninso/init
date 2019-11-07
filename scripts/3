@@ -1,0 +1,81 @@
+#!bin/bash
+echo " _  _  _       _                                               ";
+echo "(_)(_)(_)     | |                         _                    ";
+echo " _  _  _ _____| | ____ ___  ____  _____ _| |_ ___  ____  _   _ ";
+echo "| || || | ___ | |/ ___/ _ \|    \| ___ (_   _/ _ \|    \| | | |";
+echo "| || || | ____| ( (__| |_| | | | | ____| | || |_| | | | | |_| |";
+echo " \_____/|_____)\_\____\___/|_|_|_|_____)  \__\___/|_|_|_|\__  |";
+echo "             / _____)           (_)       _             (____/ ";
+echo "            ( (____   ____  ____ _ ____ _| |_                  ";
+echo "             \____ \ / ___)/ ___| |  _ (_   _)                 ";
+echo "             _____) ( (___| |   | | |_| || |_                  ";
+echo "            (______/ \____|_|   |_|  __/  \__)                 ";
+echo "                                  |_|                          ";
+echo "                                           script by : aazeroua";															
+echo "Entre password";
+read -s rep
+if [ $rep != 1337 ]
+then
+	{
+		echo "error";
+	}
+else
+	{
+		echo " ----------------------------------------------------------------------------- "
+		echo " |                                                                             |"
+		echo " |        1 - update & upgrade & configure ssh                                 | "
+		echo " |                                                                             | "
+		echo " |        2 - Test speed connection                                            | "
+		echo " |                                                                             | "
+		echo " |        3 - Find the external IP                                             | "
+		echo " |                                                                             | "
+		echo " |        4 - connect to ssh                     								 | "
+		echo " |                                                                             | "
+		echo " |        5 - exit		                                                     | "
+		echo " |                                                                             | "
+		echo " |                                                                             | "
+		echo " |                                                                             | "
+		echo " ----------------------------------------------------------------------------- "
+		echo "          >  Chose a service by taping a number  :  " && read re
+		if [ $re == 1 ]
+		then
+			{
+				echo " > please confirm your choice Entre Yes" : &&read y
+				if [ "$y" == "yes" ]
+				then
+					{
+						sudo apt update -y & sudo apt upgrade -y
+						sudo apt install ssh -y
+						sudo service ssh start
+					}
+				fi
+			}
+		fi
+		if [ $re == 2 ]
+		then
+			{
+				curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python
+			}
+		fi
+		if [ $re == 3 ]
+		then
+			{
+				dig +short myip.opendns.com @resolver1.opendns.com
+			}
+		fi
+		if [ $re == 4 ]
+		then
+			{
+				echo " > please Entre your ip adresse : " && read ip
+				ssh user@$ip
+			}
+		fi
+		if [ $re == 5 ]
+		then
+			{
+				echo "good by"
+				exit
+			}
+		fi
+	}
+fi
